@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Hotel Template">
+    <meta name="keywords" content="Hotel, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cricket Team Recommender</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat+Alternates:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="{% static 'home/css/bootstrap.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'home/css/font-awesome.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'home/css/flaticon.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'home/css/owl.carousel.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'home/css/jquery-ui.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'home/css/nice-select.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'home/css/magnific-popup.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'home/css/slicknav.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'home/css/style.css' %}" type="text/css">
+</head>
+
+<body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Header Section Begin -->
+    <header class="header-section">
+        <div class="container-fluid">
+            <div class="inner-header">
+                <div class="logo navbar-brand">
+                    <a href="./index.html"><img src="{% static 'home/img/bcci.png' %}" alt="" width="70px"></a>
+                </div>
+                {% if not user.is_authenticated %}
+                <div class="nav-right">
+                    <a href="accounts/login" class="primary-btn">Login here!</a>
+                </div>
+                {% endif %}
+
+                <nav class="main-menu mobile-menu">
+                    <ul>
+                        <li class="active"><a href="./index.html">Home</a></li>
+                        <li><a href="./about-us.html">About</a></li>
+                        <li><a href="#allteams">Teams</a></li>
+                        <li><a href="./blog.html">Players</a></li>
+
+                        {% if user.is_authenticated %}
+
+                            <li><a href="#">Hi {{user.first_name}}</a>
+                                <ul class="drop-menu">
+                                    <li><a href="accounts/logout">logout</a></li>
+                                    <li><a href="#">Admin panel</a></li>
+                                    <li><a href="#">Select Team</a></li>
+                                </ul>
+                            </li>
+
+                        {% endif %}
+
+                    </ul>
+                </nav>
+                <div id="mobile-menu-wrap"></div>
+            </div>
+        </div>
+    </header>
+    <!-- Header End -->
+
+    <!-- Hero Area Section Begin -->
+    <section class="hero-area set-bg" data-setbg="{% static 'home/img/stadium.jpg' %}">
+<!--        <div class="container">-->
+<!--            <div class="row">-->
+<!--                <div class="col-lg-12 text-center">-->
+<!--                    <div class="hero-text">-->
+<!--                        <h1>A Luxury Stay</h1>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+    </section>
+    <!-- Hero Area Section End -->
+
+
+
+
+<!--    popular location section begin-->
+
+    <div id="allteams" class="popular-location section-padding30">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <!-- Section Tittle -->
+                            <div class="section-tittle text-center mb-80">
+
+                                <h1>All Teams<br><br<br></h1>
+                                <h1> <br><br<br></h1>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        {% for team in teams %}
+
+                        <div class="col-lg-4 col-md-6 col-sm-6">
+                            <div class="single-location mb-30">
+                                <div class="location-img">
+                                    <img src="{{team.img_url.url}}" alt="">
+                                </div>
+                                <div class="location-details">
+                                    <p>{{ team.cname }}</p>
+                                    <a href="#" class="location-btn"><i class="ti-plus"></i>See Current Players</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        {% endfor %}
+                    </div>
+
+                    <!-- More Btn -->
+
+                    <div class="row justify-content-center">
+                        <div class="room-btn pt-20">
+                            <a href= {% url 'allplayerrecords' %} class="btn view-btn1">View All Players</a>
+                        </div>
+                    </div>
+                </div>
+        </div>
+
+<!--    popular location section ends-->
+
+    <!-- Video Section Begin -->
+    <div class="video-section">
+        <div class="video-bg set-bg" data-setbg="{% static 'home/img/imgbg2.jpg' %}"></div>
+        <div class="container">
+
+
+            <div class="video-text set-bg centre" data-setbg="{% static 'home/img/india bgt.jpg' %}">
+                <a href="https://www.youtube.com/watch?v=AFEZzf9_EHk" class="pop-up"><i class="fa fa-play"></i></a>
+            </div>
+        </div>
+    </div>
+    <!-- Video Section End -->
+
+    <div>
+        <h2>
+
+        </h2>
+
+        <p>
+            History
+At the outset, there is nothing significant about the year 1721, as far as India's political history is concerned. Aurangzeb, the sixth of the great Mughals, had passed away in 1707, and the Empire he and his forefathers had built, had started to disintegrate. The Marathas were gaining in prominence, and in the process of knocking hard on the doors of Delhi. These were prominent happenings; what was peripheral was that 'merchants' from England and France had established 'settlements' in select areas of the subcontinent, and were going about their business of trade.
+
+The sea-route being the sole link between them and their respective homelands, most of these settlements were situated in the coastal areas of the Indian peninsula.
+
+It was sometime in 1721 that a British ship dropped anchor off the coast of Kutch in western India. The recreational activities the sailors indulged in on the coast elicited curious reactions from onlookers. One of the sailors, who answered to the name of Downing, recalled his time on the Kutch coast in his memoirs thus: "We everyday diverted ourselves with playing cricket and other exercises"
+
+This is the earliest recorded reference to cricket in India.
+
+As the merchants metamorphosed into rulers, they continued to demonstrate their recreational pursuits on Indian soil. The British army took on the English settlers in what was the first recorded cricket match in India in 1751.
+
+The establishment of the Calcutta Cricket Club (what we know today as CC & FC) in 1792, was another watershed for the sport in the land. In fact, it is the second-oldest cricket club in the world, after the MCC (1787).
+
+Ten years after its inception, the CCC organized a match between its team and the Old Etonians. The highlight of the game was Old Etonian Robert Vansittart's hundred. It was the first 'recorded' century on Indian soil.
+
+That game was watched by the locals, as were other encounters that took place elsewhere.
+        </p>
+    </div>
+
+    <!-- Footer Section Begin -->
+    <footer class="footer-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="footer-item">
+                        <div class="footer-logo">
+                            <a href="#"><img src="img/logo.png" alt=""></a>
+                        </div>
+                        <p>Dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                            dolore magna aliqua.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="footer-item">
+                        <h5>Newsletter</h5>
+                        <div class="newslatter-form">
+                            <input type="text" placeholder="Your Email Here">
+                            <button type="submit">Subscribe</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="footer-item">
+                        <h5>Contact Info</h5>
+                        <ul>
+                            <li><img src="img/placeholder.png" alt="">1525 Boring Lane,<br />Los Angeles, CA</li>
+                            <li><img src="img/phone.png" alt="">+1 (603)535-4592</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        
+                        <ul>
+                            <li class="active"><a href="./index.html">Home</a></li>
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Rooms</a></li>
+                            <li><a href="#">Facilities</a></li>
+                            <li><a href="#">News</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+<div class="row pt-5">
+                    <div class="col-lg-12 ">
+                        <div class="small text-white text-center"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Section End -->
+
+    <!-- Js Plugins -->
+    <script src="{% static 'home/js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'home/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'home/js/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'home/js/jquery-ui.min.js' %}"></script>
+    <script src="{% static 'home/js/jquery.nice-select.min.js' %}"></script>
+    <script src="{% static 'home/js/jquery.slicknav.js' %}"></script>
+    <script src="{% static 'home/js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'home/js/main.js' %}"></script>
+</body>
+
+</html>
