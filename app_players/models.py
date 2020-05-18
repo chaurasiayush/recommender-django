@@ -1,8 +1,8 @@
 from django.db import models
 
 # Create your models here.
-class PlayerData(models.Model):
-    pid = models.AutoField(primary_key=True)
+class OdiPlayersInfo(models.Model):
+    pid = models.IntegerField(primary_key=True)
     name = models.TextField()
     yob = models.IntegerField()
     cid = models.IntegerField()
@@ -12,8 +12,10 @@ class PlayerData(models.Model):
         managed = False
         db_table = 'player_data'
 
-
 class OverallPlayerRecord(models.Model):
+    pcid = models.IntegerField()
+    iscurrent = models.IntegerField(null=True)
+    cname = models.TextField()
     pid = models.IntegerField(primary_key=True)
     name = models.TextField(blank=True, null=True)  # This field type is a guess.
     series_played = models.IntegerField(blank=True, null=True)  # This field type is a guess.
@@ -34,3 +36,13 @@ class OverallPlayerRecord(models.Model):
     class Meta:
         managed = False  # Created from a view. Don't remove.
         db_table = 'overall_player_record'
+
+
+class StatePlayersInfo(models.Model):
+    pid = models.IntegerField(primary_key=True)
+    name = models.TextField()
+    yob = models.IntegerField()
+    team = models.TextField(max_length=256)
+    iscurrent = models.IntegerField()
+
+    

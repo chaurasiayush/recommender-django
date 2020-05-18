@@ -1,0 +1,461 @@
+pid,name,yob,cid,iscurrent
+2255,M N Samuels,1981,10,1
+2953,Zakir Hasan,1972,3,1
+2977,H Masakadza,1983,11,1
+2995,Mashrafe Mortaza,1983,3,1
+3035,P A Patel,1985,5,1
+3065,J M Anderson,1982,4,1
+3100,Umar Gul,1984,7,1
+3101,Mohammad Hafeez,1980,7,1
+3108,A Mishra,1982,5,1
+3141,V Sibanda,1983,11,1
+3167,E Chigumbura,1986,11,1
+3168,T Panyangara,1985,11,1
+3169,B R M Taylor,1986,11,1
+3171,M F Maharoof,1984,9,1
+3178,S L Malinga,1983,9,1
+3180,Abdur Razzak,1982,3,1
+3208,J-P Duminy,1984,8,1
+3210,K D Karthik,1985,5,1
+3237,C B Mpofu,1985,11,1
+3242,D W Steyn,1983,8,1
+3243,M S Dhoni,1981,5,1
+3246,A G Cremer,1986,11,1
+3269,X M Marshall,1986,10,1
+3270,S C Williams,1986,11,1
+3279,Mushfiqur Rahim,1988,3,1
+3285,D Ramdin,1985,10,1
+3287,S K Raina,1986,5,1
+3291,W U Tharanga,1985,9,1
+3320,C J Chibhabha,1986,11,1
+3321,J S Patel,1980,6,1
+3325,C L White,1983,2,1
+3331,L E Plunkett,1985,4,1
+3340,C K Kapugedera,1987,9,1
+3344,G M Strydom,1984,11,1
+3348,L R P L Taylor,1984,6,1
+3416,E J G Morgan,1986,4,1
+3426,Shakib Al Hasan,1987,3,1
+3434,S C J Broad,1986,4,1
+3447,L M P Simmons,1985,10,1
+3448,T M K Mawoyo,1986,11,1
+3457,R R Emrit,1981,10,1
+3461,Tamim Iqbal,1989,3,1
+3465,K A Pollard,1987,10,1
+3470,I Sharma,1988,5,1
+3474,R G Sharma,1987,5,1
+3476,V D Philander,1985,8,1
+3488,Mahmudullah,1986,3,1
+3498,T Maruma,1988,11,1
+3501,M D K Perera,1982,9,1
+3513,Sarfaraz Ahmed,1987,7,1
+3524,Khalid Latif,1985,7,1
+3525,Sohail Khan,1984,7,1
+3529,Wahab Riaz,1985,7,1
+3542,T G Southee,1988,6,1
+3561,S E Marsh,1983,2,1
+3562,A D S Fletcher,1987,10,1
+3573,L Ronchi,1981,6,1
+3597,N O Miller,1982,10,1
+3600,V Kohli,1988,5,1
+3611,K A J Roach,1988,10,1
+3617,Imrul Kayes,1987,3,1
+3619,C Zhuwawo,1984,11,1
+3622,R W Chakabva,1987,11,1
+3626,M Vijay,1984,5,1
+3628,A D Mathews,1987,9,1
+3633,M J Guptill,1986,6,1
+3634,N T Broom,1983,6,1
+3635,Rubel Hossain,1990,3,1
+3637,D A Warner,1986,2,1
+3640,M N Waller,1984,11,1
+3642,W D Parnell,1989,8,1
+3643,C J Ferguson,1984,2,1
+3644,R A Jadeja,1988,5,1
+3663,Noor Ali Zadran,1988,1,1
+3664,Karim Sadiq,1984,1,1
+3665,Mohammad Nabi,1985,1,1
+3667,Asghar Afghan,1987,1,1
+3669,Samiullah Shinwari,1987,1,1
+3672,Hamid Hassan,1987,1,1
+3675,Ahmed Shehzad,1991,7,1
+3680,M C Henriques,1987,2,1
+3696,A U Rashid,1988,4,1
+3698,Mohammad Amir,1992,7,1
+3699,I Udana,1988,9,1
+3703,D M Bravo,1989,10,1
+3713,C A K Walton,1985,10,1
+3720,K O A Powell,1990,10,1
+3721,Umar Akmal,1990,7,1
+3724,J L Denly,1986,4,1
+3725,T D Paine,1984,2,1
+3727,Mirwais Ashraf,1988,1,1
+3728,Mohammad Shahzad,1988,1,1
+3729,Shapoor Zadran,1985,1,1
+3730,Shafiqullah,1989,1,1
+3733,K M Jarvis,1989,11,1
+3737,B J Watling,1985,6,1
+3745,R A S Lakmal,1987,9,1
+3746,S Randiv,1985,9,1
+3747,N L T C Perera,1989,9,1
+3748,Shafiul Islam,1989,3,1
+3749,H D R L Thirimanne,1989,9,1
+3756,S P D Smith,1989,2,1
+3759,W P Saha,1984,5,1
+3762,Aftab Alam,1992,1,1
+3763,Shabir Noori,1992,1,1
+3766,D T Christian,1983,2,1
+3775,S T Finn,1989,4,1
+3779,L D Chandimal,1989,9,1
+3780,C R Ervine,1985,11,1
+3783,D A Miller,1989,8,1
+3786,U T Yadav,1987,5,1
+3787,B M A J Mendis,1983,9,1
+3788,R Ashwin,1986,5,1
+3792,T L Chatara,1991,11,1
+3793,Umar Amin,1989,7,1
+3798,Asad Shafiq,1986,7,1
+3799,J R Hazlewood,1991,2,1
+3813,Javed Ahmadi,1992,1,1
+3816,Azhar Ali,1985,7,1
+3817,K S Williamson,1990,6,1
+3821,Mohammad Irfan,1982,7,1
+3826,C A Pujara,1988,5,1
+3829,H K Bennett,1987,6,1
+3830,M A Starc,1990,2,1
+3831,J W Hastings,1985,2,1
+3832,S Dhawan,1985,5,1
+3836,A D Russell,1988,10,1
+3839,A F Milne,1992,6,1
+3840,D G Brownlie,1984,6,1
+3842,U T Khawaja,1986,2,1
+3845,A J Finch,1986,2,1
+3846,C R Woakes,1989,4,1
+3847,F du Plessis,1984,8,1
+3850,Imran Tahir,1979,8,1
+3852,D Bishoo,1985,10,1
+3855,Junaid Khan,1989,7,1
+3859,A R Nurse,1988,10,1
+3863,K C Brathwaite,1992,10,1
+3871,F D M Karunaratne,1988,9,1
+3872,B V Vitori,1990,11,1
+3875,Dawlat Zadran,1988,1,1
+3877,Gulbadin Naib,1991,1,1
+3878,Nasir Hossain,1991,3,1
+3879,Shuvagata Hom,1986,3,1
+3880,R M S Eranga,1986,9,1
+3881,S Prasanna,1985,9,1
+3883,B A Stokes,1991,4,1
+3885,N M Lyon,1987,2,1
+3887,A D Hales,1989,4,1
+3888,J C Buttler,1990,4,1
+3889,A M Rahane,1988,5,1
+3898,Yasir Shah,1986,7,1
+3900,J M Bairstow,1989,4,1
+3903,J Charles,1989,10,1
+3908,C R Brathwaite,1988,10,1
+3909,P J Cummins,1993,2,1
+3910,M S Wade,1987,2,1
+3911,D A J Bracewell,1990,6,1
+3912,M R Marsh,1991,2,1
+3914,N Pradeep,1986,9,1
+3922,S P Narine,1988,10,1
+3924,T A Boult,1989,6,1
+3925,J N Mohammed,1986,10,1
+3929,G J Bailey,1982,2,1
+3930,J P Faulkner,1990,2,1
+3932,T W M Latham,1992,6,1
+3935,Amir Hamza,1991,1,1
+3936,C de Grandhomme,1986,6,1
+3951,F Behardien,1983,8,1
+3952,S T Gabriel,1988,10,1
+3955,Rahat Ali,1988,7,1
+3960,Najibullah Zadran,1993,1,1
+3965,Abul Hasan,1992,3,1
+3968,D Elgar,1987,8,1
+3969,G J Maxwell,1988,2,1
+3972,E M D Y Munaweera,1989,9,1
+3973,A Dananjaya,1993,9,1
+3976,V Permaul,1989,10,1
+3978,T D Astle,1986,6,1
+3979,Anamul Haque,1992,3,1
+3980,Mominul Haque,1991,3,1
+3981,J E Root,1990,4,1
+3983,C J Anderson,1990,6,1
+3984,M J McClenaghan,1986,6,1
+3985,C Munro,1987,6,1
+3986,J D S Neesham,1990,6,1
+3988,Q de Kock,1992,8,1
+3989,C H Morris,1987,8,1
+3990,A M Phangiso,1984,8,1
+3991,B Kumar,1990,5,1
+3993,Mohammed Shami,1990,5,1
+3994,M D K J Perera,1990,9,1
+3995,B C J Cutting,1987,2,1
+3996,K W Richardson,1991,2,1
+3998,J O Holder,1991,10,1
+4001,N M Coulter-Nile,1987,2,1
+4002,K J Abbott,1987,8,1
+4004,C T Mutombodzi,1990,11,1
+4009,Rahmat Shah,1993,1,1
+4017,A K Perera,1990,9,1
+4019,R Mutumbami,1989,11,1
+4022,Sikandar Raza,1986,11,1
+4027,V Shankar,1991,5,1
+4033,K M Jadhav,1985,5,1
+4034,S Kaul,1990,5,1
+4062,J J Bumrah,1993,5,1
+4063,Y S Chahal,1990,5,1
+4064,R Dhawan,1990,5,1
+4066,D S Kulkarni,1988,5,1
+4069,A T Rayudu,1985,5,1
+4083,M K Pandey,1989,5,1
+4104,M A Agarwal,1991,5,1
+4108,C A Lynn,1990,2,1
+4123,K K Nair,1991,5,1
+4137,K L Rahul,1992,5,1
+4201,M G Neser,1990,2,1
+4224,A C Agar,1993,2,1
+4225,Haris Sohail,1989,7,1
+4226,Zulfiqar Babar,1978,7,1
+4227,M T Chinouya,1986,11,1
+4234,G S Ballance,1989,4,1
+4238,C J Jordan,1988,4,1
+4239,Hashmatullah Shahidi,1994,1,1
+4243,I S Sodhi,1992,6,1
+4245,Afsar Zazai,1993,1,1
+4246,Shan Masood,1989,7,1
+4248,A P Devcich,1985,6,1
+4249,S S Cottrell,1989,10,1
+4252,Sharjeel Khan,1989,7,1
+4253,Usman Shinwari,1994,7,1
+4254,S M A Priyanjan,1989,9,1
+4257,M J Henry,1991,6,1
+4266,Mohammad Mithun,1990,3,1
+4268,Sabbir Rahman,1991,3,1
+4269,M L Cummins,1990,10,1
+4270,P C de Silva,1990,9,1
+4271,M M Ali,1987,4,1
+4273,B E Hendricks,1990,8,1
+4274,Najeeb Tarakai,1991,1,1
+4278,M S Chapman,1994,6,1
+4299,Taskin Ahmed,1995,3,1
+4300,Usman Ghani,1996,1,1
+4310,A R Patel,1994,5,1
+4311,Parvez Rasool,1989,5,1
+4312,J Blackwood,1991,10,1
+4313,Sharafuddin Ashraf,1995,1,1
+4314,D T Tiripano,1988,11,1
+4315,Nasir Jamal,1993,1,1
+4316,N Dickwella,1993,9,1
+4318,J Nyumbu,1985,11,1
+4320,N Madziva,1991,11,1
+4321,R R Rossouw,1989,8,1
+4324,Taijul Islam,1992,3,1
+4325,J J Roy,1990,4,1
+4335,P L S Gamage,1988,9,1
+4336,B B Chari,1992,11,1
+4339,K Rabada,1995,8,1
+4340,R R Hendricks,1989,8,1
+4354,S F Mire,1989,11,1
+4359,P J Moor,1991,11,1
+4362,Soumya Sarkar,1993,3,1
+4363,Fareed Ahmad,1994,1,1
+4369,J A Burns,1989,2,1
+4370,T Bavuma,1990,8,1
+4373,J L Carter,1987,10,1
+4380,P V D Chameera,1992,9,1
+4383,A J Tye,1986,2,1
+4386,T M Head,1993,2,1
+4387,S S Iyer,1994,5,1
+4389,M P Stoinis,1989,2,1
+4390,J Yadav,1990,5,1
+4393,S N Thakur,1991,5,1
+4399,H H Pandya,1993,5,1
+4412,Mohammad Rizwan,1992,7,1
+4413,Sami Aslam,1995,7,1
+4414,Mustafizur Rahman,1995,3,1
+4417,S D Hope,1993,10,1
+4418,Z S Ansari,1991,4,1
+4419,J M Vince,1991,4,1
+4420,D J Willey,1990,4,1
+4421,M A Wood,1990,4,1
+4423,Imad Wasim,1988,7,1
+4425,Babar Azam,1994,7,1
+4427,S O Dowrich,1991,10,1
+4428,S W Billings,1991,4,1
+4429,M J Santner,1992,6,1
+4430,Liton Das,1994,3,1
+4432,B M Wheeler,1991,6,1
+4453,T A M Siriwardana,1985,9,1
+4454,S S Pathirana,1989,9,1
+4459,T Muzarabani,1987,11,1
+4472,D M de Silva,1991,9,1
+4474,J D F Vandersay,1990,9,1
+4475,G S N F G Jayasuriya,1991,9,1
+4476,M D Shanaka,1991,9,1
+4477,G H Worker,1989,6,1
+4480,Aamer Yamin,1990,7,1
+4481,Bilal Asif,1985,7,1
+4482,W P Masakadza,1993,11,1
+4483,T S Chisoro,1988,11,1
+4484,Rashid Khan,1998,1,1
+4485,B K G Mendis,1995,9,1
+4487,M D Gunathilaka,1991,9,1
+4488,Iftikhar Ahmed,1990,7,1
+4506,Sayed Shirzad,1994,1,1
+4507,Yamin Ahmadzai,1992,1,1
+4509,H M Nicholls,1991,6,1
+4511,S M Boland,1989,2,1
+4512,B B Sran,1992,5,1
+4514,Nurul Hasan,1993,3,1
+4515,Abu Hider,1996,3,1
+4516,Mosaddeck Hossain,1995,3,1
+4527,A Zampa,1992,2,1
+4531,C A K Rajitha,1993,9,1
+4532,D A S Gunaratne,1986,9,1
+4536,Mohammad Nawaz,1994,7,1
+4538,E Lewis,1991,10,1
+4539,K K Ahmed,1997,5,1
+4542,R R Pant,1997,5,1
+4557,D L Chahar,1992,5,1
+4558,P S P Handscomb,1991,2,1
+4562,T Shamsi,1990,8,1
+4564,K M C Bandara,1987,9,1
+4566,L A Dawson,1990,4,1
+4568,J T Ball,1991,4,1
+4570,R L Chase,1992,10,1
+4571,P A D L R Sandakan,1991,9,1
+4572,P S Masvaure,1988,11,1
+4574,M V T Fernando,1991,9,1
+4575,A S Joseph,1996,10,1
+4579,Hasan Ali,1994,7,1
+4580,M A Aponso,1993,9,1
+4581,W I A Fernando,1998,9,1
+4587,N Pooran,1995,10,1
+4588,A L Phehlukwayo,1996,8,1
+4589,D Pretorius,1989,8,1
+4590,Naveen -ul-Haq,1999,1,1
+4592,K O K Williams,1990,10,1
+4593,Rumman Raees,1991,7,1
+4595,J M Mennie,1988,2,1
+4596,B M Duckett,1994,4,1
+4598,Mehidy Hasan Miraz,1997,3,1
+4599,C B R L S Kumara,1997,9,1
+4600,C T Mumba,1995,11,1
+4601,K A Maharaj,1990,8,1
+4605,R Powell,1993,10,1
+4608,T K Musakanda,1994,11,1
+4609,L H Ferguson,1991,6,1
+4611,Karim Janat,1998,1,1
+4615,Hazratullah Zazai,1998,1,1
+4619,Subashis Roy,1988,3,1
+4621,H W R Cartwright,1992,2,1
+4624,T A Blundell,1990,6,1
+4625,D Olivier,1992,8,1
+4626,B Stanlake,1994,2,1
+4633,Najmul Hossain Shanto,1998,3,1
+4636,L Ngidi,1996,8,1
+4637,J T Smuts,1988,8,1
+4641,D Paterson,1989,8,1
+4644,L D Madushanka,1992,9,1
+4645,R P Burl,1994,11,1
+4646,R Ngarava,1997,11,1
+4648,A J Turner,1993,2,1
+4650,J A Richardson,1996,2,1
+4651,Ihsanullah,1997,1,1
+4652,Kuldeep Yadav,1994,5,1
+4653,Shadab Khan,1998,7,1
+4654,Fakhar Zaman,1990,7,1
+4656,N A Saini,1992,5,1
+4675,Mohammed Siraj,1994,5,1
+4677,Mohammad Saifuddin,1996,3,1
+4681,S O Hetmeyer,1996,10,1
+4683,Mohammad Abbas,1990,7,1
+4684,Washington Sundar,1999,5,1
+4685,S C Kuggeleijn,1992,6,1
+4686,S H A Rance,1987,6,1
+4688,Sunzamul Islam,1990,3,1
+4689,T S Roland-Jones,1988,4,1
+4690,Faheem Ashraf,1994,7,1
+4693,T K Curran,1995,4,1
+4694,D J Malan,1987,4,1
+4695,K A Hope,1988,10,1
+4696,P W H de Silva,1997,9,1
+4697,A M Fernando,1997,9,1
+4699,P M Pushpakumara,1987,9,1
+4701,A K Markram,1994,8,1
+4702,S W Ambris,1993,10,1
+4704,S Samarawickrama,1995,9,1
+4705,J P Behrendorff,1990,2,1
+4706,Imam-ul-Haq,1995,7,1
+4707,P W A Mulder,1998,8,1
+4712,C Overton,1994,4,1
+4714,Mujeeb Ur Rahman,2001,1,1
+4716,R A Reifer,1991,10,1
+4718,R R Beaton,1992,10,1
+4719,B Muzarabani,1996,11,1
+4726,A T Carey,1991,2,1
+4728,D S K Madushanka,1995,9,1
+4729,D J M Short,1990,2,1
+4730,K Zondo,1990,8,1
+4731,H Klaasen,1991,8,1
+4732,T L Seifert,1994,6,1
+4734,Afif Hossain,1999,3,1
+4735,Ariful Haque,1992,3,1
+4736,Nazmul Islam,1992,3,1
+4738,Abu Jayed,1993,3,1
+4739,C J Dala,1989,8,1
+4740,C Jonker,1986,8,1
+4742,K M A Paul,1998,10,1
+4746,Hussain Talat,1996,7,1
+4747,Asif Ali,1991,7,1
+4759,P P Shaw,1999,5,1
+4769,Shubman Gill,1999,5,1
+4777,J C Archer,1995,4,1
+4782,Zahir Khan,1998,1,1
+4787,S M Curran,1998,4,1
+4798,Shaheen Shah Afridi,2000,7,1
+4800,B A Mavuta,1997,11,1
+4802,R C Murray,1998,11,1
+4803,L N Roche,1999,11,1
+4804,T S Kamunhukamwe,1995,11,1
+4805,N G R P Jayasuriya,1991,9,1
+4816,M Labuschagne,1994,2,1
+4817,H E van der Dussen,1989,8,1
+4819,O P Stone,1993,4,1
+4821,C Hemraj,1993,10,1
+4822,O R Thomas,1997,10,1
+4823,Fazle Mahmud,1987,3,1
+4825,O C McCoy,1997,10,1
+4826,F A Allen,1995,10,1
+4827,P H K D Mendis,1998,9,1
+4830,K Pierre,1991,10,1
+4832,B T Foakes,1993,4,1
+4840,J D Campbell,1993,10,1
+4848,J N Malan,1996,8,1
+4849,L Sipamla,1998,8,1
+4852,B O P Fernando,1992,9,1
+4928,Ikram Ali Khil,2000,1,1
+4929,A Nortje,1993,8,1
+4945,S Dube,1993,5,1
+4950,P A R P Perera,1995,9,1
+4956,H R Walsh,1992,10,1
+4991,Mohammad Hasnain,2000,7,1
+4992,Abid Ali,1987,7,1
+4993,Saad Ali,1993,7,1
+5249,A Ndlovu,1996,11,1
+5471,Ibrahim Zadran,2001,1,1
+5479,B C Fortuin,1994,8,1
+5500,M Bhanuka,1995,9,1
+5658,S Mahmood,1997,4,1
+5659,Mohammad Naim,1999,3,1
+5660,T Banton,1998,4,1
+5661,M W Parkinson,1996,4,1
+5662,R Shepherd,1994,10,1
+5665,B A King,1994,10,1
+5774,K A Jamieson,1994,6,1
+5787,C K Tshuma,1993,11,1
+5829,K Verreynne,1997,8,1
+5830,W N Madhevere,2000,11,1
+5839,D M Dupavillon,1994,8,1

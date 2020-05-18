@@ -1,6 +1,9 @@
 from django.urls import path
-from .views import overallPRec
-urlpatterns = [
+from . import views
 
-    path('allplayers', overallPRec, name='allplayerrecords')
+app_name = 'players'
+
+urlpatterns = [
+    path('allplayers', views.overallPRec, name='allplayerrecords'),
+    path('teamplayers', views.teamPlayers, name='teamplayers')
 ]

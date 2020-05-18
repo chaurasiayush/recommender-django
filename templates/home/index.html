@@ -37,27 +37,27 @@
         <div class="container-fluid">
             <div class="inner-header">
                 <div class="logo navbar-brand">
-                    <a href="./index.html"><img src="{% static 'home/img/bcci.png' %}" alt="" width="70px"></a>
+                    <a href="#"><img src="{% static 'home/img/bcci.png' %}" alt="" width="70px"></a>
                 </div>
                 {% if not user.is_authenticated %}
                 <div class="nav-right">
-                    <a href="accounts/login" class="primary-btn">Login here!</a>
+                    <a href="{% url 'accounts:login' %}" class="primary-btn">Login here!</a>
                 </div>
                 {% endif %}
 
                 <nav class="main-menu mobile-menu">
                     <ul>
-                        <li class="active"><a href="./index.html">Home</a></li>
-                        <li><a href="./about-us.html">About</a></li>
+                        <li class="active"><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
                         <li><a href="#allteams">Teams</a></li>
-                        <li><a href="./blog.html">Players</a></li>
+                        <li><a href="#">Players</a></li>
 
                         {% if user.is_authenticated %}
 
                             <li><a href="#">Hi {{user.first_name}}</a>
                                 <ul class="drop-menu">
                                     <li><a href="accounts/logout">logout</a></li>
-                                    <li><a href="#">Admin panel</a></li>
+                                    <li><a href="{% url 'admin:index' %}">Admin panel</a></li>
                                     <li><a href="#">Select Team</a></li>
                                 </ul>
                             </li>
@@ -105,6 +105,11 @@
                     </div>
 
                     <div class="row">
+                        <form id="teamplayers" class="form-inline" action="{% url 'players:teamplayers' %}" method="post">
+                        {% csrf_token %}
+
+                        <input type = "hidden" id="cid" name="cid" value="0">
+
                         {% for team in teams %}
 
                         <div class="col-lg-4 col-md-6 col-sm-6">
@@ -114,19 +119,20 @@
                                 </div>
                                 <div class="location-details">
                                     <p>{{ team.cname }}</p>
-                                    <a href="#" class="location-btn"><i class="ti-plus"></i>See Current Players</a>
+                                    <a class="location-btn" onclick=sendCid({{team.cid}})> <i class="ti-plus"></i>see current players</a>
                                 </div>
                             </div>
                         </div>
 
                         {% endfor %}
+                        </form>
                     </div>
 
                     <!-- More Btn -->
 
                     <div class="row justify-content-center">
                         <div class="room-btn pt-20">
-                            <a href= {% url 'allplayerrecords' %} class="btn view-btn1">View All Players</a>
+                            <a href= "{% url 'players:allplayerrecords' %}" class="btn view-btn1">View All Players</a>
                         </div>
                     </div>
                 </div>
@@ -209,7 +215,7 @@ That game was watched by the locals, as were other encounters that took place el
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
-                        
+
                         <ul>
                             <li class="active"><a href="./index.html">Home</a></li>
                             <li><a href="#">About</a></li>
@@ -234,6 +240,14 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <!-- Footer Section End -->
 
     <!-- Js Plugins -->
+    <script>
+        function sendCid(cid){
+          var x = document.getElementById("cid");
+          x.value = cid
+          document.getElementById("teamplayers").submit()
+            // alert(x);
+        }
+    </script>
     <script src="{% static 'home/js/jquery-3.3.1.min.js' %}"></script>
     <script src="{% static 'home/js/bootstrap.min.js' %}"></script>
     <script src="{% static 'home/js/jquery.magnific-popup.min.js' %}"></script>
