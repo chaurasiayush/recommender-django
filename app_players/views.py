@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import PlayerData, OverallPlayerRecord
+from .models import OdiPlayersInfo, OverallPlayerRecord
 # Create your views here.
 
 def overallPRec(request):

@@ -38,11 +38,9 @@ class OverallPlayerRecord(models.Model):
         db_table = 'overall_player_record'
 
 
-class StatePlayersInfo(models.Model):
-    pid = models.IntegerField(primary_key=True)
-    name = models.TextField()
-    yob = models.IntegerField()
-    team = models.TextField(max_length=256)
-    iscurrent = models.IntegerField()
-
-    
+# class StatePlayersInfo(models.Model):
+#     pid = models.IntegerField(primary_key=True)
+#     name = models.TextField()
+#     yob = models.IntegerField()
+#     team = models.TextField(max_length=256)
+#     iscurrent = models.IntegerField()

@@ -2,7 +2,7 @@ from django.db import connection
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import *
-from app_players.models import PlayerData
+from app_players.models import OdiPlayersInfo
 # Create your views here.
 
 curr = connection.cursor()

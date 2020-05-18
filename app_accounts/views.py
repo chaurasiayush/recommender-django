@@ -36,10 +36,10 @@ def register(request):
         if password1 == password2:
             if User.objects.filter(username=username).exists():
                 messages.info(request, 'Username Taken')
-                return redirect('register')
+                return redirect('accounts:register')
             elif User.objects.filter(email=email).exists():
                 messages.info(request, 'Email Taken')
-                return redirect('accounts: register')
+                return redirect('accounts:register')
             else:
                 user = User.objects.create_user(username=username, password=password1, email=email,
                                                 first_name=first_name, last_name=last_name)
@@ -49,11 +49,11 @@ def register(request):
 
         else:
             messages.info(request, 'password not matching..')
-            return redirect('accounts: register')
+            return redirect('accounts:register')
         # return redirect('/')
 
     else:
-        return render(request, 'accounts: register')
+        return render(request, 'accounts/register.html')
 
 
 def logout(request):
