@@ -48,7 +48,7 @@
                 <nav class="main-menu mobile-menu">
                     <ul>
                         <li class="active"><a href="#">Home</a></li>
-                        <li><a href="#">About</a></li>
+                        <!-- <li><a href="{% url 'aiengine:selection_form' %}">Make a Selection</a></li> -->
                         <li><a href="#allteams">Teams</a></li>
                         <li><a href="#">Players</a></li>
 
@@ -58,7 +58,7 @@
                                 <ul class="drop-menu">
                                     <li><a href="accounts/logout">logout</a></li>
                                     <li><a href="{% url 'admin:index' %}">Admin panel</a></li>
-                                    <li><a href="#">Select Team</a></li>
+                                    <li><a href="{% url 'aiengine:selection_form' %}">Select Team</a></li>
                                 </ul>
                             </li>
 

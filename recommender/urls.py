@@ -24,6 +24,8 @@ urlpatterns = [
     path('players/', include('app_players.urls')),
     path('playerselection/', include('app_playerSelection.urls')),
     path('admin/', admin.site.urls),
+    path('archive/', include('app_archive.urls')),
+    path('aiengine/', include('app_aiengine.urls')),
 ]
 
 urlpatterns = urlpatterns + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

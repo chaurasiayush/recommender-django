@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'app_home',
     'app_players',
     'app_accounts',
+    'app_aiengine',
+    'app_archive',
 ]
 
 MIDDLEWARE = [

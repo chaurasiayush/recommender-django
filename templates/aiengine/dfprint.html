@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <title>Record</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{% static 'home/css/bootstrap.min.css' %}">
+   <script src="{% static 'home/js/jquery-3.3.1.min.js' %}"></script>
+   <script src="{% static 'home/js/bootstrap.min.js' %}"></script>
+</head>
+<body>
+
+<div class="container">
+
+  <h2>SHOWING DATAFRAMES</h2><hr><br><br>
+<!--  <p>The .table-striped class adds zebra-stripes to a table:</p>            -->
+
+
+  {% for table in dflist %}
+    <div class="table table-striped">
+      <h3>TABLE</h3>
+        {% autoescape off %}{{ table }}{% endautoescape %}
+    </<div>
+
+    </div>
+  {% endfor %}
+</div>
+
+</body>
+</html>
