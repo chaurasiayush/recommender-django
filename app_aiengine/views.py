@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from app_home.models import CountryData
-from app_players.models import OdiPlayersInfo, OdiClusters, StatePlayerInfo, StateClusters
+from app_players.models import OdiPlayersInfo, OdiClusters, StatePlayerInfo, StateClusters, PlayersWKeepRecords
 from app_archive.models import OdiMatchScorecardSerieswise, StateMatchScorecardSerieswise
 from app_aiengine.lib.prsystem import *
 import pandas as pd
@@ -18,7 +18,13 @@ def makeClusters(request):
     statematchserieswise = pd.DataFrame.from_records(rec4)
     # html4 = statematchserieswise.head(10).to_html()
 
-    odiindexes = clusterOdiPlayers(odimatchserieswise[:], saveLocation="media/aiengine/")
+    # wkrecord = pd.read_csv('wk_records.csv')
+    qs3 = PlayersWKeepRecords.objects.all()
+    rec3 = qs3.values()
+    wkrecord = pd.DataFrame(rec3)
+    html = wkrecord.to_html()
+
+    odiindexes = clusterOdiPlayers(odimatchserieswise[:], wkrecord, saveLocation="media/aiengine/")
     odiindexes.to_csv('odi.csv', index=False)
     html5 = odiindexes.head(20).to_html()
 
@@ -27,26 +33,28 @@ def makeClusters(request):
     model_instances = [OdiClusters(
         pid=record['pid'],
         series_played=record['series_played'],
-        batri=record['batRI'],
-        bowlri=record['bowlRI'],
-        cluster=record['clusterRI']
+        batRI=record['batRI'],
+        bowlRI=record['bowlRI'],
+        wkRI=record['wkRI'],
+        clusterRI=record['clusterRI']
     ) for record in odiindexes_records]
     OdiClusters.objects.bulk_create(model_instances)
 
-    stateindexes = clusterStatePlayers(statematchserieswise, odiindexes)
+    stateindexes = clusterStatePlayers(statematchserieswise, odiindexes, wkrecord)
     StateClusters.objects.all().delete()
     stateindexes_records = stateindexes.to_dict('records')
     model_instances = [StateClusters(
         pid=record['pid'],
         series_played=record['series_played'],
-        batri=record['batRI'],
-        bowlri=record['bowlRI'],
-        cluster=record['clusterRI']
+        batRI=record['batRI'],
+        bowlRI=record['bowlRI'],
+        wkRI=record['wkRI'],
+        clusterRI=record['clusterRI']
     ) for record in stateindexes_records]
     StateClusters.objects.bulk_create(model_instances)
 
     args = {
-        'dflist' : [html5]
+        'dflist' : [html]
     }
 
     # print(df)
@@ -103,7 +111,7 @@ def recommendTeamPlayers(request):
 
             'ranks' : ranks
         }
-
+        print(ranking)
         return render(request, 'aiengine/selection_result.html', args)
 
     else:

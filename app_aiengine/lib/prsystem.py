@@ -254,25 +254,51 @@ def calcIndexes(srec):
             pindexes = pindexes.append(pRI, ignore_index = True)
     return pindexes
 
+# Function to calculate wicket Keeping index
+
+def calcWkRI(iswk, match_played, tdismissials):
+    if iswk == 0:
+        return -1
+    elif match_played == 0 or match_played != match_played:
+        return 0
+    return match_played/ tdismissials
+
 
 # ### Defining Function To Claculate **Average** of Series-wise Batting and Bowling Indexes for All Players
 
 # In[17]:
 
 
-def calcAvgRI(data):
+def calcAvgRI(data, wkrec):
     rdata = pd.DataFrame()
     for player in set(data.pid):
-        p= data[data['pid'] == player]
+        p = data[data['pid'] == player]
         ser = len(p)
-        p = p.drop(['pid', 'series_code'], axis = 1 )
-        p = pd.DataFrame(p.mean(axis = 0))
+        p = p.drop(['pid', 'series_code'], axis=1)
+        p = pd.DataFrame(p.mean(axis=0))
         p = p.swapaxes('index', 'columns')
+
+        try:
+            wkRI = -1
+            dat = wkrec[wkrec.pid == player]
+            # iswk = 0
+            if not dat.empty:
+                iswk = int(dat['iswk'])
+                mplayed = float(dat['match_played'])
+                td = float(dat['total_dismissals'])
+
+                wkRI = calcWkRI(iswk, mplayed, td)
+
+                if wkRI != wkRI:
+                    wkRI = 0
+        except:
+            raise (Exception("wkRI Exception.. cant calculate"))
 
         p.insert(0, 'pid', player)
         p.insert(0, 'series_played', ser)
+        p.insert(4, 'wkRI', wkRI)
         rdata = rdata.append(p)
-        rdata = rdata.reset_index(drop = True)
+        rdata = rdata.reset_index(drop=True)
     return rdata
 
 
@@ -406,10 +432,11 @@ def selOverallTopN(stateplayers, nbats, nbowls):
 
 
 
-def clusterOdiPlayers(imrec, saveLocation, minAllowedIndexCoeff = 0.5):
+def clusterOdiPlayers(imrec, wkeepingrec, saveLocation, minAllowedIndexCoeff = 0.5):
 
     """
     :param imrec: ODI players serise-wise record "Dataframe"
+    :param wkeepingrec: Wicket Keeping records for player in "Dataframe" form
     :param show: If true, shows clustering plotted data
     :param minAllowedIndexCoeff: A constant which will be substracted from minimum index value and assigned to all null values
     :return: returns "Dataframe" of players indexs with cluster
@@ -422,7 +449,7 @@ def clusterOdiPlayers(imrec, saveLocation, minAllowedIndexCoeff = 0.5):
 
     ### Calculating average ranking indexes
 
-    anipIndexes = calcAvgRI(ipIndexes)
+    anipIndexes = calcAvgRI(ipIndexes, wkeepingrec)
 #     anipIndexes.head()
 
     # weighted index calculation
@@ -488,11 +515,12 @@ def clusterOdiPlayers(imrec, saveLocation, minAllowedIndexCoeff = 0.5):
 
 ## 2.2 Cluster analysis for State Team Players
 
-def clusterStatePlayers(smrec, odiindexes, rangeFactor=1000, min_series_criteria=3):
+def clusterStatePlayers(smrec, odiindexes, wkeepingrec, rangeFactor=1000, min_series_criteria=3):
 
     """
     :param smrec: State players serise-wise record "Dataframe"
     :param odiindexes: ODI players clustered "Dataframe"
+    :param wkeepingrec: Wicket Keeping records for player in "Dataframe" form
     :param rangeFactor: Factor to multiply with all indexes to increase range
     :param min_series_criteria: minimum series played Criteria for state players
     :return: returns "Dataframe" of players indexs with cluster
@@ -505,7 +533,7 @@ def clusterStatePlayers(smrec, odiindexes, rangeFactor=1000, min_series_criteria
 
     ### Calculating average ranking indexes
 
-    anspIndexes = calcAvgRI(spIndexes)
+    anspIndexes = calcAvgRI(spIndexes, wkeepingrec)
 #     anspIndexes.head()
 
     ### Considering players who have played atleast 3 series
@@ -659,16 +687,19 @@ def selectPlayers(pclustered, team, nbats, nbowls, nall):
 
     ptbat = pteam[(pteam.clusterRI == 0) | (pteam.clusterRI == 1)]
     ptbat = ptbat.sort_values(['batRI'], ascending=False).reset_index(drop=True)
+    # ptbat.insert(3, 'role', value='Batsman')
     lbat = len(ptbat)
 #     print("bats: ", ptbat)
 
     ptbowl = pteam[pteam.clusterRI == 4]
     ptbowl = ptbowl.sort_values(['bowlRI'], ascending=False).reset_index(drop=True)
+    # ptbowl.insert(3, 'role', value='Bowler')
     lbowl = len(ptbowl)
 #     print("ptbowls: ", ptbowl)
 
     ptall = pteam[(pteam.clusterRI == 2) | (pteam.clusterRI == 3)]
     ptall.insert(2, 'rir', ptall.batRI/ptall.bowlRI)
+    # ptall.insert(3, 'role', value='All-Rounder')
     lall = len(ptall)
 #     print("ptall: ", ptall)
 
@@ -704,7 +735,13 @@ def selectPlayers(pclustered, team, nbats, nbowls, nall):
     for b in range(0, nall):
         pospl = pospl.append(ptall.iloc[b])
 
-    print("tplayers: ", pospl.shape)
+    pospl = pospl.reset_index(drop=True)
+    # print("tplayers: ", pospl.shape)
+
+    pospl.insert(3, 'role', value='')
+    ind = pospl[pospl.wkRI >= 0].index
+    for i in ind:
+        pospl.loc[i, 'role'] = 'Wicket-Keeper'
 
    #batting ranking
 
@@ -712,14 +749,14 @@ def selectPlayers(pclustered, team, nbats, nbowls, nall):
 
 
     for b in range(0, total_players):
-        rankbat.append((b+1, [batpl.iloc[b]['name'], batpl.iloc[b]['team']]))
+        rankbat.append((b+1, [int(batpl.iloc[b]['pid']), batpl.iloc[b]['name'], batpl.iloc[b]['role'], batpl.iloc[b]['team']]))
 
     #bowling ranking
 
     bowlpl = pospl.sort_values(['bowlRI'], ascending=False).reset_index(drop=True)
 
     for b in range(0, total_players):
-        rankbowl.append((b+1, [bowlpl.iloc[b]['name'], bowlpl.iloc[b]['team']]))
+        rankbowl.append((b+1, [int(bowlpl.iloc[b]['pid']), bowlpl.iloc[b]['name'], bowlpl.iloc[b]['role'], bowlpl.iloc[b]['team']]))
 
     return (rankbat, rankbowl)
 
