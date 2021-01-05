@@ -14,6 +14,22 @@ class OdiPlayersInfo(models.Model):
         db_table = 'ODI_player_info'
 
 
+class PlayersWKeepRecords(models.Model):
+    pid = models.IntegerField(unique=True, null=False)
+    iswk = models.IntegerField(default=0)
+    match_played = models.IntegerField(default=0)
+    catches = models.IntegerField(default=0)
+    stumpings = models.IntegerField(default=0)
+    total_dismissals = models.IntegerField(default=0)
+
+    def __str__(self):
+        return str(self.pid)
+
+    class Meta:
+        db_table = 'players_wicket_keeping_records'
+
+
+
 class OverallPlayerRecord(models.Model):
     pcid = models.IntegerField()
     iscurrent = models.IntegerField(null=True)
@@ -57,14 +73,14 @@ class OdiClusters(models.Model):
     pid = models.IntegerField(primary_key=True)
     clusterRI = models.IntegerField()
     series_played = models.IntegerField()
-    batRI = models.FloatField(db_column='batRI')  # Field name made lowercase.
-    bowlRI = models.FloatField(db_column='bowlRI')  # Field name made lowercase.
-
+    batRI = models.FloatField(db_column='batRI')
+    bowlRI = models.FloatField(db_column='bowlRI')
+    wkRI = models.FloatField(db_column='wkRI')
     def __str__(self):
         return str(self.pid)
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'ODI_clusters'
 
 
@@ -102,12 +118,13 @@ class StateClusters(models.Model):
     pid = models.IntegerField(primary_key=True)
     clusterRI = models.IntegerField()
     series_played = models.IntegerField()
-    batRI = models.FloatField(db_column='batRI')  # Field name made lowercase.
-    bowlRI = models.FloatField(db_column='bowlRI')  # Field name made lowercase.
+    batRI = models.FloatField(db_column='batRI')
+    bowlRI = models.FloatField(db_column='bowlRI')
+    wkRI = models.FloatField(db_column='wkRI')
 
     def __str__(self):
         return str(self.pid)
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'state_clusters'
