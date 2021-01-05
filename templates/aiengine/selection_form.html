@@ -1,0 +1,107 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Jekyll v4.0.1">
+  <title>Team Selection</title>
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="{% static 'home/css/bootstrap.min.css' %}" type="text/css">
+  <link href="{% static 'aiengine/css/selectionform.css' %}" rel="stylesheet">
+</head>
+<div class="container">
+
+  <form class= "container centre-block select-form" action="{% url 'aiengine:recommend_players' %}" method='POST'>
+
+    {% csrf_token %}
+
+    <div class="text-center">
+      <img class="mb-5" src="{% static 'home/img/ball.png' %}" alt="" width="100px">
+    </div>
+
+    <h1 class="h4 mb-4 font-weight-normal">Please Fill Below Details</h1>
+
+    <div class="form-group">
+      <!-- <label for="team1" class="col-2 col-form-label">TEAM</label> -->
+      <select class="custom-select" name='team1'>
+        <option value="-1" selected>Select Target Team</option>
+
+        {% for team in teams %}
+        <option value="{{team.cid}}">{{team.cname}}</option>
+        {% endfor %}
+
+      </select>
+    </div>
+
+      <div class="form-group">
+        <select class="custom-select" name="team2">
+          <option selected value="-1">Select Opponent Team</option>
+
+          {% for team in teams %}
+          <option value="{{team.cid}}">{{team.cname}}</option>
+          {% endfor %}
+
+        </select>
+      </div>
+
+    <div class="form-group row">
+      <label for="enumber-input" class="col-3 col-form-label">Batsman</label>
+      <div class="col-9">
+        <input class="form-control" name="obats" type="number" value="6" id="number-input">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="number-input2" class="col-3 col-form-label">Bowlers</label>
+      <div class="col-9">
+        <input class="form-control" name="obowls" type="number" value="4" id="number-input2">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="number-input3" class="col-3 col-form-label">All-Rounders</label>
+      <div class="col-9">
+        <input class="form-control" name="oall" type="number" value="5" id="number-input3">
+      </div>
+    </div>
+
+    <h1 class="h5 mb-4 mt-5 font-weight-normal">Select State Players</h1>
+
+      <div class="form-group">
+        <select class="custom-select" name="state-sel-method">
+          <option selected value="dontselect" >Don't Select..</option>
+          <option value="overall">Overall Top Players</option>
+          <option value="statewise">Statewise Top Players</option>
+        </select>
+      </div>
+
+    <div class="form-group row">
+      <label for="example-number-input" class="col-3 col-form-label">Batsman</label>
+      <div class="col-9">
+        <input class="form-control" name="sbats" type="number" value="3" id="example-number-input">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="example-number-input" class="col-3 col-form-label">Bowlers</label>
+      <div class="col-9">
+        <input class="form-control" name="sbowls" type="number" value="3" id="example-number-input">
+      </div>
+    </div>
+
+
+    <div class="text-center">
+      <button class="mt-5 btn btn-lg btn-primary select-btn" type="submit">Make A Selection</button>
+      <p class="mt-5 mb-3 text-centre">&copy; 2020-2022</p>
+
+    </div>
+
+  </form>
+
+</div>
+
+</html>

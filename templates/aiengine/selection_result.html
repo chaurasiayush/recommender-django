@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'home/css/bootstrap.min.css' %}" type="text/css">
+  <title>Selection Result</title>
+</head>
+<body >
+
+  <div class="container">
+
+    <div class="container mt-2">
+      <div class="jumbotron">
+        <h1>Selection Results</h1>
+        <p>List of players with ranking according to batting ang bowling innings as per your selection criteria</p>
+      </div>
+    </div>
+
+    <div class="text-center">
+
+      {% for rank, title in ranks %}
+
+      <h1 CLASS="h4 mt-5 mb-4">Ranking According To {{title}}</h1>
+      <table class="table table-hover" style="max-wigth:400px">
+        <thead class="thead-dark">
+        <tr class="d-flex">
+          <th class="col-3">player rank</th>
+          <!-- <th class="col-2">player ID</th> -->
+          <th class="col-6">player name</th>
+          <th class="col-3">player team</th>
+        </tr>
+      </thead>
+
+        {% for player in rank %}
+        <tr class="d-flex">
+          <td class="col-3">{{player.0}}</td>
+          <!-- <td class="col-2">1029</td> -->
+          <td class="col-6">{{player.1.0}}</td>
+          <td class="col-3">{{player.1.1}}</td>
+        </tr>
+        {% endfor %}
+
+      </table>
+
+      {% endfor %}
+    </div>
+
+  </div>
+
+</body>
+</html>

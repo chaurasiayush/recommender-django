@@ -5,5 +5,6 @@ app_name = 'players'
 
 urlpatterns = [
     path('allplayers', views.overallPRec, name='allplayerrecords'),
-    path('teamplayers', views.teamPlayers, name='teamplayers')
+    path('teamplayers', views.teamPlayers, name='teamplayers'),
+    path('stateplayersinfo', views.statePlayersInfo, name='stateplayersinfo'),
 ]

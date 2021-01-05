@@ -1,5 +1,6 @@
 from django.shortcuts import render
-from .models import OdiPlayersInfo, OverallPlayerRecord
+from django.http import HttpResponse
+from .models import OdiPlayersInfo, OverallPlayerRecord, StatePlayerInfo
 # Create your views here.
 
 def overallPRec(request):
@@ -28,3 +29,14 @@ def teamPlayers(request):
         }
 
         return render(request, 'players/PlayersRecord.html', context=inject)
+
+
+def statePlayersInfo(request):
+    allStatePlayers = StatePlayerInfo.objects.order_by('name')
+
+    inject = {
+        'teamval' : 'State Team',
+        'players' : allStatePlayers,
+    }
+
+    return HttpResponse(allStatePlayers)
